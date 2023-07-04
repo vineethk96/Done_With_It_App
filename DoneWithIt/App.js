@@ -1,26 +1,44 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import {
+    StyleSheet,
+    Text,
+    View,
+    Image 
+} from 'react-native';
+import {
+    useDimensions,                                              // Allows dynamic selection of screen size based on orientation
+    useDeviceOrientation                                        // Returns device orientation
+} from '@react-native-community/hooks';  
+import { SafeAreaView } from 'react-native-safe-area-context';  // Provides a Platform Agnostic safe area to work within
 
 export default function App() {
 
-  let x = 1;
+    let x = 1;
 
-  // How logging works, remove these before production
-  console.log("Here are print statements!");
+    // How logging works, remove these before production
+    console.log("Here are print statements!");
 
-  return (
-    <View style={styles.container}>
-      <Text>fuck you</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+    const handlePress = () => console.log("Text pressed");
+
+    return (
+        <SafeAreaView style = {[styles.container]}>
+            <Text numberOfLines={1} onPress={handlePress}>
+                hello
+            </Text>
+            <Image source={{
+                width: 200,
+                height: 300,
+                uri: "https://picsum.photos/200/300"
+            }} />
+        </SafeAreaView>
+);
+
 }
-
-const styles = StyleSheet.create({
-  container: {
+    const styles = StyleSheet.create({
+    container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
+    backgroundColor: 'green',
     justifyContent: 'center',
-  },
+    alignItems: 'center'
+},
 });

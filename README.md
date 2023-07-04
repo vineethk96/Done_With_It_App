@@ -7,4 +7,4 @@ Mock Marketplace App
 1. To install the expo-cli, run `npm install -g expo-cli`
 2. Begin the project by `npx create-expo-app --template`
 3. Blank template selected
-4. in DoneWithIt Directory, run `npm start`
+4. in DoneWithIt Directory, run `npm start` to begin node server
